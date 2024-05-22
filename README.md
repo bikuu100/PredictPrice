@@ -101,6 +101,122 @@ Copy code
 ├── requirements.txt
 ├── README.md
 └── Dockerfile
+
+# Dataset Features
+
+### Numerical Features:
+- `screen_size`
+- `main_camera_mp`
+- `selfie_camera_mp`
+- `int_memory`
+- `ram`
+- `battery`
+- `weight`
+- `release_year`
+- `days_used`
+- `new_price`
+- `used_price` (target)
+- `price_drop`
+- `price_drop_range`
+- `days_used_bins`
+- `days_used_rounded`
+
+### Categorical Features:
+- `brand_name`
+- `os`
+- `4g`
+- `5g`
+
+## Data Analysis and Visualization
+
+### Exploratory Data Analysis (EDA)
+- Analyzed the dataset to understand distributions, trends, and patterns.
+- Handled missing values by filling them with appropriate statistics (mean, median, mode).
+
+### Visualizations
+- **Histograms and KDE Plots**: Visualized the distribution of numerical features.
+- **Pairplot**: Examined pairwise relationships between numerical features.
+- **Correlation Heatmap**: Identified highly correlated features with 'used_price'.
+- **Boxplots**: Visualized the distribution of numerical features grouped by categorical variables.
+- **Bar Plots**: Showed the frequency of each category in categorical features.
+- **Count Plots and Stacked Bar Plots**: Illustrated the distribution and count of categorical features across different categories.
+
+### Key Insights
+- **Correlation Analysis**: Identified numerical features most correlated with 'used_price'.
+- **Feature Importance**: Used machine learning models to determine the importance of each feature in predicting 'used_price'.
+- **Distribution Analysis**: Examined the distribution of 'used_price' and other numerical features to identify outliers or unusual patterns.
+- **Categorical Analysis**: Analyzed the distribution of categorical features and their impact on 'used_price'.
+
+##Model Development
+
+The following regression models were evaluated:
+
+Linear Regression
+Lasso Regression
+Ridge Regression
+K-Neighbors Regressor
+Decision Tree
+Random Forest Regressor
+XGBRegressor
+CatBoost Regressor
+AdaBoost Regressor
+Results
+After evaluating the models, Random Forest and CatBoost Regressor were identified as the top-performing models. The performance metrics for these models are as follows:
+
+Random Forest Regressor:
+
+Training Set:
+Root Mean Squared Error: 9.9718
+Mean Absolute Error: 6.1817
+R² Score: 0.9676
+Test Set:
+Root Mean Squared Error: 23.9984
+Mean Absolute Error: 16.5604
+R² Score: 0.7852
+CatBoost Regressor:
+
+Training Set:
+Root Mean Squared Error: 12.6317
+Mean Absolute Error: 9.9678
+R² Score: 0.9480
+Test Set:
+Root Mean Squared Error: 24.8179
+Mean Absolute Error: 16.4798
+R² Score: 0.7703
+Hyperparameter Tuning
+Hyperparameter tuning was performed to optimize the models. The best parameters for CatBoost Regressor were:
+
+Learning Rate: 0.01
+Iterations: 500
+Depth: 6
+After tuning, CatBoost Regressor showed the best performance:
+
+Training Set:
+Root Mean Squared Error: 21.2684
+Mean Absolute Error: 15.1630
+R² Score: 0.8526
+Test Set:
+Root Mean Squared Error: 22.8235
+Mean Absolute Error: 16.3499
+R² Score: 0.8057
+
+
+### Preprocessing Steps
+1. **Scaling Numerical Features**: Used `StandardScaler` to standardize numerical features.
+2. **One-Hot Encoding Categorical Features**: Used `OneHotEncoder` to encode categorical features.
+3. **Combining Preprocessing Steps**: Utilized `ColumnTransformer` to apply transformations.
+
+
+## Model Deployment
+
+### Flask Application
+- Developed a Flask web application to provide a user interface for predicting used mobile phone prices based on input features.
+- Implemented API endpoints for model inference.
+
+### AWS Deployment
+- Deployed the Flask web application on AWS Elastic Beanstalk for scalable and reliable access.
+- Configured the environment for deploying the model, ensuring proper dependencies and runtime settings.
+
 How to Run
 Clone the repository:
 

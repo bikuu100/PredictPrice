@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Price Prediction</title>
+</head>
+<body>
+    <h1>Enter Phone Details</h1>
+    <form action="/predict" method="post">
+        <!-- Input fields for numerical features -->
+        <label for="screen_size">Screen Size:</label>
+        <input type="number" name="screen_size" id="screen_size" required><br>
+
+        <label for="main_camera_mp">Main Camera MP:</label>
+        <input type="number" name="main_camera_mp" id="main_camera_mp" required><br>
+
+        <label for="selfie_camera_mp">Selfie Camera MP:</label>
+        <input type="number" name="selfie_camera_mp" id="selfie_camera_mp" required><br>
+
+        <label for="int_memory">Internal Memory:</label>
+        <input type="number" name="int_memory" id="int_memory" required><br>
+
+        <label for="ram">RAM:</label>
+        <input type="number" name="ram" id="ram" required><br>
+
+        <label for="battery">Battery:</label>
+        <input type="number" name="battery" id="battery" required><br>
+
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" id="weight" required><br>
+
+        <label for="release_year">Release Year:</label>
+        <input type="number" name="release_year" id="release_year" required><br>
+
+        <label for="days_used">Days Used:</label>
+        <input type="number" name="days_used" id="days_used" required><br>
+
+        <label for="new_price">New Price:</label>
+        <input type="number" name="new_price" id="new_price" required><br>
+
+        <!-- Dropdown menus for categorical features -->
+        <label for="brand_name">Brand Name:</label>
+        <select name="brand_name" id="brand_name" required>
+            <option value="Honor">Honor</option>
+            <option value="Others">Others</option>
+            <option value="HTC">HTC</option>
+            <option value="Huawei">Huawei</option>
+            <option value="Infinix">Infinix</option>
+            <option value="Lava">Lava</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="LG">LG</option>
+            <option value="Meizu">Meizu</option>
+            <option value="Micromax">Micromax</option>
+            <option value="Motorola">Motorola</option>
+            <option value="Nokia">Nokia</option>
+            <option value="OnePlus">OnePlus</option>
+            <option value="Oppo">Oppo</option>
+            <option value="Realme">Realme</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="ZTE">ZTE</option>
+            <option value="Apple">Apple</option>
+            <option value="Asus">Asus</option>
+            <option value="Coolpad">Coolpad</option>
+            <option value="Acer">Acer</option>
+            <option value="Alcatel">Alcatel</option>
+            <option value="BlackBerry">BlackBerry</option>
+            <option value="Celkon">Celkon</option>
+            <option value="Gionee">Gionee</option>
+            <option value="Google">Google</option>
+            <option value="Karbonn">Karbonn</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Panasonic">Panasonic</option>
+            <option value="Sony">Sony</option>
+            <option value="Spice">Spice</option>
+            <option value="XOLO">XOLO</option>
+        </select><br>
+
+        <label for="os">Operating System:</label>
+        <select name="os" id="os" required>
+            <option value="Android">Android</option>
+            <option value="Others">Others</option>
+            <option value="iOS">iOS</option>
+            <option value="Windows">Windows</option>
+        </select><br>
+
+        <label for="4g">4G:</label>
+        <select name="4g" id="4g" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="5g">5G:</label>
+        <select name="5g" id="5g" required>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br>
+
+        <!-- Submit button -->
+        <button type="submit">Predict Price</button>
+    </form>
+</body>
+</html>

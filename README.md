@@ -1,4 +1,4 @@
-Certainly! Here's a detailed README file for your project, which includes a table of contents, project structure, and descriptions of each component.
+
 
 ---
 
@@ -121,4 +121,3 @@ This project is licensed under the MIT License.
 
 ---
 
-This README provides a comprehensive overview of your project, including all necessary steps and descriptions. Feel free to adjust any sections as per your specific project details.
